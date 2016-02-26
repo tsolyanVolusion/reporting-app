@@ -25,10 +25,11 @@ class Login extends Component{
     render() {
         return (
             <View style={styles.container}>
-
+                <Image style={styles.logo}
+                    source={require('image!rocket')} />
 
                 <Text style={styles.heading}>
-                    Reporting Application
+                    vNext Reporting
                 </Text>
 
                 <TextInput 
@@ -63,14 +64,30 @@ class Login extends Component{
         let b = new buffer.Buffer(`${this.username}:${this.password}`);
         let auth64 = b.toString('base64')
 
-        fetch('https://api.github.com/user', {
+        fetch('https://api.github.com', {
             headers: {
                 'Authorization': `Basic ${auth64}`
             }
         })
+        .then((res) => {
+            if (res.status >= 200 && res.status < 300) {
+                return res;
+            }
+
+            if (res.status === 401) {
+                throw 'Bad credentials';
+            }
+
+            throw 'Error';
+        })
         .then(res => res.json())
         .then(res => {
             console.log(res)
+        })
+        .catch((err) => {
+            console.log(`err: ${err}`)
+        })
+        .finally(() => {
             this.setState({showProgress: false});
         });
     }
