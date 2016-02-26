@@ -2,7 +2,7 @@ let buffer = require('buffer');
 
 class AuthService {
     login(creds, cb) {
-        let b = new buffer.Buffer(`${this.username}:${this.password}`);
+        let b = new buffer.Buffer(`${creds.username}:${creds.password}`);
         let auth64 = b.toString('base64')
 
         fetch('https://api.github.com', {
@@ -26,6 +26,7 @@ class AuthService {
             cb({success: true});
         })
         .catch((err) => {
+            console.log(err)
             cb(err);
         })
         .finally(() => {

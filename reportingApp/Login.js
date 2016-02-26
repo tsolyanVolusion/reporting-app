@@ -75,12 +75,19 @@ class Login extends Component{
 
     onLoginPressed() {
         this.setState({showProgress: true});
-        let authService = require('./services/AuthService');
+        let authService = require('./AuthService');
+
         authService.login({
             username: this.state.username,
             password: this.state.password
         }, (res) => {
-            this.setState(res);
+            this.setState(Object.assign({
+                showProgress: false
+            }, res));
+
+            if (res.success && this.props.onLogin) {
+                this.props.onLogin();
+            }
         });
     }
 }
