@@ -22,18 +22,15 @@ class AuthService {
         })
         .then(res => res.json())
         .then(res => {
+            console.log(res);
             cb({success: true});
         })
         .catch((err) => {
-            console.log(err)
+            console.log(err.badCredentials)
             cb(err);
         })
         .finally(() => {
             cb({showProgress: false});
-
-
-            //this is just to make it work untill we get real API
-            cb({success: true});
         });
     }
 }
