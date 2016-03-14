@@ -1,6 +1,8 @@
 'use strict';
 const React = require('react-native');
 
+import { Button, Card } from 'react-native-material-design';
+
 const {
     Text,
     TextInput,
@@ -62,12 +64,17 @@ class Login extends Component{
                     <Text style={styles.buttonText}>Log In</Text>
                 </TouchableHighlight>
 
+
+
                 {errorCtrl}
 
                 <ActivityIndicatorIOS
                     animating={this.state.showProgress}
                     size="large"
                     style={styles.loader} />
+
+                    <Button value="NORMAL FLAT" onPress={()=> console.log("I pressed a flat button")} />
+            <Button value="NORMAL RAISED" raised={true} onPress={()=> console.log("I pressed a raised button")} />
             </View>
 
         );
@@ -75,7 +82,7 @@ class Login extends Component{
 
     onLoginPressed() {
         this.setState({showProgress: true});
-        let authService = require('./ios/reportingApp/services/AuthService');
+        let authService = require('./services/AuthService');
 
         authService.login({
             username: this.state.username,

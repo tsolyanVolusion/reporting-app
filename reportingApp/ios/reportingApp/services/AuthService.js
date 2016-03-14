@@ -26,7 +26,7 @@ class AuthService {
             cb({success: true});
         })
         .catch((err) => {
-            console.log(err.badCredentials)
+            console.log(err)
             cb(err);
         })
         .finally(() => {

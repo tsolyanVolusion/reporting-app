@@ -1,5 +1,5 @@
 const React = require('react-native');
-const Login = require('./Login');
+const Login = require('./ios/reportingApp/Login');
 
 const {
     Text,
