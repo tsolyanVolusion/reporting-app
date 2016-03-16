@@ -1,5 +1,6 @@
 const React = require('react-native');
 const Login = require('./ios/reportingApp/Login');
+const Landing = require('./ios/reportingApp/Landing');
 
 const {
     Text,
@@ -20,11 +21,7 @@ class reportingApp extends React.Component{
 
   render() {
     if (this.state.isLoggedIn) {
-      return (
-          <View style={styles.container}>
-              <Text style={styles.welcome}>Howdy!!!</Text>
-          </View>
-        );
+      return <Landing />
     } else {
       return (
         <Login onLogin={this.onLogin} />
