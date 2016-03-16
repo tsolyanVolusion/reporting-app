@@ -1,6 +1,5 @@
 'use strict';
 const React = require('react-native');
-const buffer = require('buffer');
 
 const {
     Text,
@@ -23,12 +22,27 @@ class Login extends Component{
     }
 
     render() {
+        let errorCtrl = <View />;
+
+        if (!this.state.success && this.state.badCredentials) {
+            errorCtrl = <Text style={styles.error}>
+                That username and password combination did not work.
+            </Text>;
+        }
+
+        if (!this.state.success && this.state.unknownError) {
+            errorCtrl = <Text style={styles.error}>
+                We encountered an unexpected error.
+            </Text>;
+        }
+
         return (
             <View style={styles.container}>
-
+                <Image style={styles.logo}
+                    source={require('image!rocket')} />
 
                 <Text style={styles.heading}>
-                    Reporting Application
+                    vNext Reporting
                 </Text>
 
                 <TextInput 
@@ -48,6 +62,10 @@ class Login extends Component{
                     <Text style={styles.buttonText}>Log In</Text>
                 </TouchableHighlight>
 
+
+
+                {errorCtrl}
+
                 <ActivityIndicatorIOS
                     animating={this.state.showProgress}
                     size="large"
@@ -59,23 +77,22 @@ class Login extends Component{
 
     onLoginPressed() {
         this.setState({showProgress: true});
+        let authService = require('./services/AuthService');
 
-        let b = new buffer.Buffer(`${this.username}:${this.password}`);
-        let auth64 = b.toString('base64')
+        // authService.login({
+        //     username: this.state.username,
+        //     password: this.state.password
+        // }, (res) => {
+        //     this.setState(Object.assign({
+        //         showProgress: false
+        //     }, res));
 
-        fetch('https://api.github.com/user', {
-            headers: {
-                'Authorization': `Basic ${auth64}`
-            }
-        })
-        .then(res => res.json())
-        .then(res => {
-            console.log(res)
-            this.setState({showProgress: false});
-        });
+        //     if (res.success && this.props.onLogin) {
+        //         this.props.onLogin();
+        //     }
+        // });
+        this.props.onLogin();
     }
-
-
 }
 
 const styles = StyleSheet.create({
@@ -117,6 +134,10 @@ const styles = StyleSheet.create({
     },
     loader: {
         marginTop: 20
+    },
+    error: {
+        color: 'red',
+        marginTop: 10
     }
 })
 
