@@ -22,6 +22,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		F311319C1C9AEF61004CAC7C /* libRCTMaterialKit_a.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F311319B1C9AEF61004CAC7C /* libRCTMaterialKit_a.h */; };
+		F311319E1C9AEF61004CAC7C /* libRCTMaterialKit_a.m in Sources */ = {isa = PBXBuildFile; fileRef = F311319D1C9AEF61004CAC7C /* libRCTMaterialKit_a.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +104,27 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		F311318D1C9AEC65004CAC7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F31131851C9AEC65004CAC7C /* RCTMaterialKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A1B8E771B22E4E300DB45C2;
+			remoteInfo = RCTMaterialKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F31131971C9AEF61004CAC7C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				F311319C1C9AEF61004CAC7C /* libRCTMaterialKit_a.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -126,6 +148,10 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		F31131851C9AEC65004CAC7C /* RCTMaterialKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTMaterialKit.xcodeproj; path = "../node_modules/react-native-material-kit/iOS/RCTMaterialKit.xcodeproj"; sourceTree = "<group>"; };
+		F31131991C9AEF61004CAC7C /* liblibRCTMaterialKit.a.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibRCTMaterialKit.a.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F311319B1C9AEF61004CAC7C /* libRCTMaterialKit_a.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libRCTMaterialKit_a.h; sourceTree = "<group>"; };
+		F311319D1C9AEF61004CAC7C /* libRCTMaterialKit_a.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libRCTMaterialKit_a.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +176,13 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F31131961C9AEF61004CAC7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +295,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F31131851C9AEC65004CAC7C /* RCTMaterialKit.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -290,6 +324,7 @@
 				13B07FAE1A68108700A75B9A /* reportingApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* reportingAppTests */,
+				F311319A1C9AEF61004CAC7C /* libRCTMaterialKit.a */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 			);
 			indentWidth = 2;
@@ -301,8 +336,26 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* reportingApp.app */,
 				00E356EE1AD99517003FC87E /* reportingAppTests.xctest */,
+				F31131991C9AEF61004CAC7C /* liblibRCTMaterialKit.a.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F31131861C9AEC65004CAC7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F311318E1C9AEC65004CAC7C /* libRCTMaterialKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F311319A1C9AEF61004CAC7C /* libRCTMaterialKit.a */ = {
+			isa = PBXGroup;
+			children = (
+				F311319B1C9AEF61004CAC7C /* libRCTMaterialKit_a.h */,
+				F311319D1C9AEF61004CAC7C /* libRCTMaterialKit_a.m */,
+			);
+			path = libRCTMaterialKit.a;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +397,23 @@
 			productReference = 13B07F961A680F5B00A75B9A /* reportingApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F31131981C9AEF61004CAC7C /* libRCTMaterialKit.a */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F311319F1C9AEF61004CAC7C /* Build configuration list for PBXNativeTarget "libRCTMaterialKit.a" */;
+			buildPhases = (
+				F31131951C9AEF61004CAC7C /* Sources */,
+				F31131961C9AEF61004CAC7C /* Frameworks */,
+				F31131971C9AEF61004CAC7C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libRCTMaterialKit.a;
+			productName = libRCTMaterialKit.a;
+			productReference = F31131991C9AEF61004CAC7C /* liblibRCTMaterialKit.a.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -356,6 +426,9 @@
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					F31131981C9AEF61004CAC7C = {
+						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
 			};
@@ -388,6 +461,10 @@
 					ProjectRef = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
 				},
 				{
+					ProductGroup = F31131861C9AEC65004CAC7C /* Products */;
+					ProjectRef = F31131851C9AEC65004CAC7C /* RCTMaterialKit.xcodeproj */;
+				},
+				{
 					ProductGroup = 00C302D41ABCB9D200DB3ED1 /* Products */;
 					ProjectRef = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
 				},
@@ -416,6 +493,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* reportingApp */,
 				00E356ED1AD99517003FC87E /* reportingAppTests */,
+				F31131981C9AEF61004CAC7C /* libRCTMaterialKit.a */,
 			);
 		};
 /* End PBXProject section */
@@ -491,6 +569,13 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		F311318E1C9AEC65004CAC7C /* libRCTMaterialKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTMaterialKit.a;
+			remoteRef = F311318D1C9AEC65004CAC7C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -544,6 +629,14 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F31131951C9AEF61004CAC7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F311319E1C9AEF61004CAC7C /* libRCTMaterialKit_a.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,6 +824,31 @@
 			};
 			name = Release;
 		};
+		F31131A01C9AEF61004CAC7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F31131A11C9AEF61004CAC7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -760,6 +878,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F311319F1C9AEF61004CAC7C /* Build configuration list for PBXNativeTarget "libRCTMaterialKit.a" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F31131A01C9AEF61004CAC7C /* Debug */,
+				F31131A11C9AEF61004CAC7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

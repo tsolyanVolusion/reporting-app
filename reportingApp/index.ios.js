@@ -1,6 +1,6 @@
 const React = require('react-native');
-const Login = require('./ios/reportingApp/Login');
-const Landing = require('./ios/reportingApp/Landing');
+const Login = require('./ios/reportingApp/views/Login');
+const Landing = require('./ios/reportingApp/views/Landing');
 
 const {
     Text,
