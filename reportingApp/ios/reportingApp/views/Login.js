@@ -77,7 +77,7 @@ class Login extends Component{
 
     onLoginPressed() {
         this.setState({showProgress: true});
-        let authService = require('./services/AuthService');
+        let authService = require('../services/AuthService');
 
         // authService.login({
         //     username: this.state.username,
